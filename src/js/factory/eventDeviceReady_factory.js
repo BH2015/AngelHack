@@ -2,13 +2,13 @@ angular.module('Angelhack.controllers.Main').factory('Angelhack.factory.EventDev
     return function(fn) {
         var queue = [];
         var impl = function() {
-            queue.push(Array.prototype.slice.call(arguments));
+            this.queue.push(Array.prototype.slice.call(arguments));
         };
 
         document.addEventListener('deviceready', function() {
-            queue.forEach(function(args){
+            this.queue.forEach(function(args){
                 fn.apply(this,args);
-            });
+            },this);
             impl = fn;
         },false);
 
