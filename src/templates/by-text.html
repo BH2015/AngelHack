@@ -1,3 +1,34 @@
-<section class="section container-fluid">
-    <h1 class="page-header">By Text</h1>
-</section>
+<div class="scrollable">
+    <div class="scrollable-content section">
+        <div ng-include="'alerts.html'"></div>
+        <form role="form" ng-submit='submit()'>
+            <fieldset>
+                <legend>Submit an incident in details</legend>
+                <div class="form-group has-success has-feedback">
+                    <label>Subject</label>
+                    <input type="text"
+                           ng-model="subject"
+                           class="form-control"
+                           placeholder="Enter a summary of your incident"
+                           ng-required="true">
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea style="width:100%"
+                              ng-model="description"
+                              class="form-control"
+                              placeholder="Enter the details of the incident"
+                              ng-required="true"></textarea>
+                </div>
+            </fieldset>
+            <hr>
+
+            <button class="btn btn-primary btn-block">
+                Submit
+                <span ng-show="loading"><i class="fa fa-spinner fa-spin"></i></span>
+            </button>
+            <br>
+        </form>
+    </div>
+</div>

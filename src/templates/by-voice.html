@@ -13,9 +13,11 @@
                 <div>
                     <a ng-click="!isDisabled && controlVoiceRecording()">
                         <i ng-if="!isRecording" class="fa fa-microphone feature-icon text-primary"></i>
-                        <i ng-if="isRecording" class="fa fa-stop feature-icon text-primary"></i></a>
+                        <i ng-if="isRecording" class="fa fa-stop feature-icon text-primary"></i>
+                    </a>
                 </div>
                 <br><br>
+
                 <div ng-if="stopRecording" class="btn-group justified nav-tabs">
                     <a ng-click="submit()" class="btn btn-primary">Submit</a>
                     <a ng-click="cancel()" class="btn btn-default">Cancel</a>

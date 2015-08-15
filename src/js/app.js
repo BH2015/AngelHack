@@ -15,7 +15,11 @@ angular.module('Angelhack', [
             controller: 'VoiceCtrl',
             reloadOnSearch: false
         });
-        $routeProvider.when('/by-text', {templateUrl: 'by-text.html', reloadOnSearch: false});
+        $routeProvider.when('/by-text', {
+            templateUrl: 'by-text.html',
+            controller: 'TextCtrl',
+            reloadOnSearch: false
+        });
         $routeProvider.when('/preferences', {templateUrl: 'preferences.html', reloadOnSearch: false});
     });
 

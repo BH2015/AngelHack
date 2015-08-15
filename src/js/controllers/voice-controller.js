@@ -21,6 +21,7 @@ angular.module('Angelhack.controllers.Main')
 
             $scope.isDisabled = false;
             $scope.stopRecording = false;
+            $scope.messages.success = "Your incident is reported. Thank You!";
         };
 
         $scope.cancel = function () {
