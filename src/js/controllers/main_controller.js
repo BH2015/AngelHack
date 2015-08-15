@@ -5,19 +5,16 @@ angular.module('Angelhack.controllers.Main', [])
         $scope.activateBurstMode = function () {
             getPhotoFromGallery.getPhoto(function(photo) {
                 fileTransfer.uploadPhoto(function() {
-                    var reference = arguments[0]['reference'];
-                    window.alert("Reference for photo", reference, arguments);
-                    RemoteCommService.submitImageReference(reference, function () {
+                    var args = arguments;
+                    RemoteCommService.submitImageReference(args[0]['response'], function () {
                         $scope.messages.success = "Your incident is reported";
                     }, function () {
                         $scope.messages.error = "Unable to upload your incident right now. Please try again";
                         //todo save request and re-try later
-                        window.alert("photo reference upload failed");
                     });
                 },function() {
                     $scope.messages.error = "Unable to upload your incident right now. Please try again";
                     //todo save request and re-try later
-                    window.alert("fileupload failed");
                 },photo);
             });
         };

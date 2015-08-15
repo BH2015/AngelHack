@@ -6,8 +6,8 @@ angular.module('Angelhack.controllers.Main')
             $scope.startCapture = function () {
                 getPhotoFromGallery.getPhoto(function (photo) {
                     fileTransfer.uploadPhoto(function () {
-                        var reference = JSON.stringify(arguments[0]);
-                        RemoteCommService.submitImageReference(reference, function () {
+                        var args = arguments;
+                        RemoteCommService.submitImageReference(args[0]['response'], function () {
                             $scope.messages.success = "Your incident is reported";
                         }, function () {
                             $scope.messages.error = "Unable to upload your incident right now. Please try again";

@@ -23,6 +23,10 @@
                         {
                             "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
+                            "count": 1
                         }
                     ],
                     "widget": [
@@ -38,7 +42,7 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 3
+                            "count": 4
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
@@ -46,6 +50,18 @@
                         },
                         {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
                             "count": 1
                         }
                     ],
@@ -87,6 +103,9 @@
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
         "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "org.apache.cordova.media": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },

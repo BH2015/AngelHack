@@ -1,10 +1,14 @@
 angular.module("Angelhack.controllers.Main")
-    .service('RemoteCommService', ['getCurrentPosition', function (getCurrentPosition) {
+    .service('RemoteCommService', ['getCurrentPosition','$http', function (getCurrentPosition,$http) {
 
-        var serverUrl = "http://crimepush.taskizer.com";
+        var serverUrl = 'http://crimepush.taskizer.com';
 
         this.submitImageReference = function (reference, success, error) {
-            getCurrentPosition(function (position) {
+
+            $http.post(serverUrl + '/images', reference).success(success).error(error);
+
+            /*getCurrentPosition(function (position) {
+                window.alert("INSIDE 1 ");
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
                 var coordinates = [lng, lat];
@@ -14,11 +18,13 @@ angular.module("Angelhack.controllers.Main")
                     coordinates: coordinates
                 };
                 $http.post(serverUrl + '/images', referenceData).success(success).error(error);
-            });
+            });*/
         };
 
         this.submitVoiceReference = function (reference, success, error) {
-            getCurrentPosition(function (position) {
+            $http.post(serverUrl + '/voice', reference).success(success).error(error);
+
+           /* getCurrentPosition(function (position) {
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
                 var coordinates = [lng, lat];
@@ -28,11 +34,13 @@ angular.module("Angelhack.controllers.Main")
                     coordinates: coordinates
                 };
                 $http.post(serverUrl + '/voice', referenceData).success(success).error(error);
-            });
+            });*/
         };
 
         this.submitTextReference = function (reference, success, error) {
-            getCurrentPosition(function (position) {
+            $http.post(serverUrl + '/text', reference).success(success).error(error);
+
+            /*getCurrentPosition(function (position) {
                 var lat = position.coords.latitude;
                 var lng = position.coords.longitude;
                 var coordinates = [lng, lat];
@@ -42,7 +50,7 @@ angular.module("Angelhack.controllers.Main")
                     coordinates: coordinates
                 };
                 $http.post(serverUrl + '/text', referenceData).success(success).error(error);
-            });
+            });*/
         };
 
     }]);

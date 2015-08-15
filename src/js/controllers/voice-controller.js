@@ -1,6 +1,7 @@
 angular.module('Angelhack.controllers.Main')
 
-    .controller('VoiceCtrl', ['$scope', function ($scope) {
+    .controller('VoiceCtrl', ['$scope','recordAudio','RemoteCommService',
+        function ($scope,recordAudio,RemoteCommService) {
         $scope.messages = {};
         $scope.isRecording = false;
         $scope.isDisabled = false;
@@ -9,19 +10,34 @@ angular.module('Angelhack.controllers.Main')
                 $scope.isRecording = false;
                 $scope.stopRecording = true;
                 $scope.isDisabled = true;
-                //todo stop recording
+                //Stop audio recording
+                recordAudio.stopAudioRecording();
             } else {
                 $scope.isRecording = true;
-                //todo start recording
+                //Start audio recording
+                recordAudio.startAudioRecording();
             }
         };
 
         $scope.submit = function () {
-            //todo submit recording here
+            //Submit recording here
+            recordAudio.uploadAudioRecording(function(){
+                var args = arguments;
+                RemoteCommService.submitVoiceReference(args[0]['response'], function () {
+                    $scope.messages.success = "Your incident is reported";
+                }, function () {
+                    window.alert('uploaded voices failed');
+                    $scope.messages.error = "Unable to upload your incident right now. Please try again";
+                    //todo save request and re-try later
+                });
+
+            },function() {
+                $scope.messages.error = "Unable to upload your incident right now. Please try again";
+                //todo save request and re-try later
+            });
 
             $scope.isDisabled = false;
             $scope.stopRecording = false;
-            $scope.messages.success = "Your incident is reported. Thank You!";
         };
 
         $scope.cancel = function () {
