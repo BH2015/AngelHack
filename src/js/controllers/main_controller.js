@@ -1,6 +1,10 @@
 angular.module('Angelhack.controllers.Main', [])
 
     .controller('MainController', function ($scope) {
+        $scope.messages = {};
+        $scope.activateBurstMode = function () {
+            $scope.messages.success = "Your incident is reported";
+        };
 
         $scope.chatUsers = [
             {name: 'Carlos  Flowers', online: true},
