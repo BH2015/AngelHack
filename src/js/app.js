@@ -8,6 +8,7 @@ angular.module('Angelhack', [
         $routeProvider.when('/', {templateUrl: 'home.html', reloadOnSearch: false});
         $routeProvider.when('/by-photo', {
             templateUrl: 'by-photo.html',
+            controller: 'PhotoCtrl',
             reloadOnSearch: false
         });
         $routeProvider.when('/by-voice', {

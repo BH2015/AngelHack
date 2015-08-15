@@ -1,15 +1,23 @@
 angular.module('Angelhack.controllers.Main', [])
-    .controller('MainCtrl', ["$scope","getPhotoFromGallery","fileTransfer",
-        function ($scope,getPhotoFromGallery,fileTransfer) {
+    .controller('MainCtrl', ["$scope","getPhotoFromGallery","fileTransfer", "RemoteCommService",
+        function ($scope,getPhotoFromGallery,fileTransfer, RemoteCommService) {
         $scope.messages = {};
         $scope.activateBurstMode = function () {
-            $scope.messages.success = "Your incident is reported";
             getPhotoFromGallery.getPhoto(function(photo) {
                 fileTransfer.uploadPhoto(function() {
-                    //TODO: Call service layer : Onto Kelum
-                    var resp =  JSON.stringify(arguments[0]);
+                    var reference = arguments[0]['reference'];
+                    window.alert("Reference for photo", reference, arguments);
+                    RemoteCommService.submitImageReference(reference, function () {
+                        $scope.messages.success = "Your incident is reported";
+                    }, function () {
+                        $scope.messages.error = "Unable to upload your incident right now. Please try again";
+                        //todo save request and re-try later
+                        window.alert("photo reference upload failed");
+                    });
                 },function() {
-                    //window.alert("fileupload failed");
+                    $scope.messages.error = "Unable to upload your incident right now. Please try again";
+                    //todo save request and re-try later
+                    window.alert("fileupload failed");
                 },photo);
             });
         };
