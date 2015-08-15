@@ -6,6 +6,8 @@ angular.module('Angelhack.controllers.Main', [])
             $scope.messages.success = "Your incident is reported";
         };
 
+        $scope.userName = "Hello Rachel";
+
         $scope.chatUsers = [
             {name: 'Carlos  Flowers', online: true},
             {name: 'Byron Taylor', online: true},
