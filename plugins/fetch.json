@@ -6,5 +6,29 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "org.apache.cordova.camera": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.camera"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "ai.api.apiaiplugin": {
+        "source": {
+            "type": "registry",
+            "id": "ai.api.apiaiplugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "android.support.v4": {
+        "source": {
+            "type": "registry",
+            "id": "android.support.v4"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }
