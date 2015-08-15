@@ -1,10 +1,15 @@
-<h1 class="app-name">CrimePush</h1>
+<h1 class="app-name">{{userName}}</h1>
 
 <div class="scrollable">
-  <h1 class="scrollable-header app-name">CrimePush</h1>
+  <!--<h1 class="scrollable-header app-name">{{userName}}</h1>-->
+
   <div class="scrollable-content">
     <div class="list-group" ui-turn-off='uiSidebarLeft'>
-      <a class="list-group-item" href="#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/"><i class="fa fa-home pull-left"></i>Home <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/by-photo"><i class="fa fa-camera pull-left"></i>By Photo <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/by-voice"><i class="fa fa-microphone pull-left"></i>By Voice <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/by-text"><i class="fa fa-file-text-o pull-left"></i>By Text <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/preferences"><i class="fa fa-cogs pull-left"></i>Preferences <i class="fa fa-chevron-right pull-right"></i></a>
     </div>
   </div>
 </div>
