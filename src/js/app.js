@@ -20,7 +20,11 @@ angular.module('Angelhack', [
             controller: 'TextCtrl',
             reloadOnSearch: false
         });
-        $routeProvider.when('/preferences', {templateUrl: 'preferences.html', reloadOnSearch: false});
+        $routeProvider.when('/preferences', {
+            templateUrl: 'preferences.html',
+            controller: 'PrefCtrl',
+            reloadOnSearch: false
+        });
     });
 
 

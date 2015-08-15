@@ -1,3 +1,135 @@
-<section class="section container-fluid">
-    <h1 class="page-header">Preferences</h1>
-</section>
+<div class="scrollable">
+    <div class="scrollable-content section">
+        <div ng-include="'alerts.html'"></div>
+        <div class="panel-group"
+             ui-state='myAccordion'
+             ui-default='2'>
+
+            <div class="panel panel-default">
+                <div class="panel-heading" ui-set="{'myAccordion': 1}">
+                    <h4 class="panel-title">
+                        Personal Details
+                    </h4>
+                </div>
+
+                <div ui-if="myAccordion == 1">
+                    <div class="panel-body">
+                        <div ng-if="isEditPersonal">
+                            <form name="updatePersonalsForm" role="form" ng-submit='updatePersonals()'>
+                                <fieldset>
+                                    <div class="form-group has-success has-feedback">
+                                        <label>Name </label>
+                                        <input type="text"
+                                               ng-model="name"
+                                               class="form-control"
+                                               placeholder="Enter your name"
+                                               ng-required="true">
+                                    </div>
+                                    <div class="form-group has-success has-feedback">
+                                        <label>Email </label>
+                                        <input type="email"
+                                               ng-model="email"
+                                               class="form-control"
+                                               placeholder="Enter your email"
+                                               ng-required="true">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Mobile </label>
+                                        <input type="text"
+                                               ng-model="mobileNo"
+                                               class="form-control"
+                                               placeholder="Enter your mobile no"
+                                               ng-required="true">
+                                    </div>
+                                    <button class="btn btn-primary btn-sm pull-left">
+                                        Update
+                                    </button>
+                                </fieldset>
+                                <br>
+                            </form>
+                        </div>
+                        <div ng-if="!isEditPersonal">
+                            <label>Name : {{name}}</label>
+                            <br>
+                            <label>Email : {{email}}</label>
+                            <br>
+                            <label>Mobile : {{mobileNo}}</label>
+                            <br>
+                            <a ng-click="enableEditPersonal()" class="btn-link pull-left">
+                                Edit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" ui-set="{'myAccordion': 2}">
+                    <h4 class="panel-title">
+                        Emergency Contacts
+                    </h4>
+                </div>
+
+                <div ui-if="myAccordion == 2">
+                    <div class="container-fluid">
+                        <br/>
+
+                        <div class="notices-container">
+                            <div ng-repeat="contact in contacts"
+                                 ng-click="showDeleteIcon(contact)"
+                                 class="section section-break">
+                                <i class="fa fa-{{contact.icon}}"></i> {{contact.message}}
+                                <a ng-show="contact.isDelete" ng-click="deleteContact(contact)" class="pull-right">
+                                    <i class="fa fa-trash-o pull-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="container-fluid">
+                        <div class="form-group">
+                            <input type="text"
+                                   ng-model="contact.newContact"
+                                   class="form-control"
+                                   placeholder="Enter a new contact"
+                                   ng-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label class="radio-inline"> <input type="radio" ng-model="contact.type"
+                                                                value="email">Email</label>
+                            <label class="radio-inline"> <input type="radio" ng-model="contact.type"
+                                                                value="phone">Phone</label>
+                        </div>
+                        <button ng-click="addContacts()" class="btn btn-primary btn-sm pull-left">
+                            Add Contact
+                        </button>
+                        <br/>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" ui-set="{'myAccordion': 3}">
+
+                    <h4 class="panel-title">
+                        App Settings
+                    </h4>
+                </div>
+
+                <div ui-if="myAccordion == 3">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label>Offline Mode</label>
+                            <ui-switch ng-model='offlineMode'></ui-switch>
+                        </div>
+                        <div class="form-group">
+                            <label>Device Discoverable</label>
+                            <ui-switch ng-model='discoverable'></ui-switch>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
