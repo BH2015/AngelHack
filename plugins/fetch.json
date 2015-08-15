@@ -54,5 +54,13 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "org.apache.cordova.file": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.file"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

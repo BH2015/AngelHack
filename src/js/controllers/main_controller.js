@@ -1,10 +1,16 @@
 angular.module('Angelhack.controllers.Main', [])
-    .controller('MainCtrl', ["$scope", "getPhotoFromGallery", function ($scope, getPhotoFromGallery) {
+    .controller('MainCtrl', ["$scope","getPhotoFromGallery","fileTransfer",
+        function ($scope,getPhotoFromGallery,fileTransfer) {
         $scope.messages = {};
         $scope.activateBurstMode = function () {
             $scope.messages.success = "Your incident is reported";
-            getPhotoFromGallery.getPhoto(function (photo) {
-                window.alert(photo);
+            getPhotoFromGallery.getPhoto(function(photo) {
+                fileTransfer.uploadPhoto(function() {
+                    //TODO: Call service layer : Onto Kelum
+                    var resp =  JSON.stringify(arguments[0]);
+                },function() {
+                    //window.alert("fileupload failed");
+                },photo);
             });
         };
 
