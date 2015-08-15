@@ -1,7 +1,9 @@
 angular.module('Angelhack', [
     'ngRoute',
     'mobile-angular-ui',
-    'Angelhack.controllers.Main'
+    'Angelhack.controllers.Main',
+    'Angelhack.factory.EventDeviceReady1',
+    'Angelhack.factory.EventDeviceReady2'
 ])
 
     .config(function ($routeProvider) {

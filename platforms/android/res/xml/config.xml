@@ -5,6 +5,17 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <widget>
+        <feature name="ApiAIPlugin">
+            <param name="android-package" value="ai.api.ApiAiPlugin" />
+        </feature>
+    </widget>
+    <feature name="ApiAIPlugin">
+        <param name="android-package" value="ai.api.ApiAiPlugin" />
+    </feature>
     <allow-intent href="market:*" />
     <name>Hello World</name>
     <description>
@@ -23,15 +34,4 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <engine name="android" spec="^4.0.2" />
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-    </feature>
-    <feature name="ApiAIPlugin">
-        <param name="android-package" value="ai.api.ApiAiPlugin" />
-    </feature>
-    <widget>
-        <feature name="ApiAIPlugin">
-            <param name="android-package" value="ai.api.ApiAiPlugin" />
-        </feature>
-    </widget>
 </widget>
