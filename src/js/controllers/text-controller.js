@@ -7,6 +7,7 @@ angular.module('Angelhack.controllers.Main')
             $scope.loading = true;
 
             //$scope.loading = false;
+            $scope.messages.success = "Your incident is reported. Thank You!";
         };
 
     }]);

@@ -1,9 +1,9 @@
 angular.module('Angelhack.controllers.Main', [])
-    .controller('MainController', ["$scope","getPhotoFromGallery",function ($scope,getPhotoFromGallery) {
+    .controller('MainCtrl', ["$scope", "getPhotoFromGallery", function ($scope, getPhotoFromGallery) {
         $scope.messages = {};
         $scope.activateBurstMode = function () {
             $scope.messages.success = "Your incident is reported";
-            getPhotoFromGallery.getPhoto(function(photo) {
+            getPhotoFromGallery.getPhoto(function (photo) {
                 window.alert(photo);
             });
         };
