@@ -1,59 +1,60 @@
 <div class="scrollable">
-  <div class="scrollable-content section">
-    <div class="list-group text-center">
-      <div class="list-group-item list-group-item-home">
-        <div>
-          <a href="#/by-image-burst"><i class="fa fa-heartbeat feature-icon text-primary"></i></a>
-        </div>
-        <div>
-          <h3 class="home-heading">Panic Mode</h3>
-          report an incident by photos in burst mode
-        </div>
-      </div>
+    <div class="scrollable-content section">
+        <div ng-include="'alerts.html'"></div>
+        <div class="list-group text-center">
+            <div class="list-group-item list-group-item-home">
+                <div>
+                    <a ng-click="activateBurstMode()"><i class="fa fa-heartbeat feature-icon text-primary"></i></a>
+                </div>
+                <div>
+                    <h3 class="home-heading">Panic Mode</h3>
+                    report an incident by photos in burst mode
+                </div>
+            </div>
 
 
-      <div class="list-group-item list-group-item-home">
-        <div>
-          <a href="#/by-image"><i class="fa fa-picture-o feature-icon  text-primary"></i></a>
-        </div>
-        <div>
-          <h3 class="home-heading">By Photo</h3>
-          report an incident using a photo
-        </div>
-      </div>
+            <div class="list-group-item list-group-item-home">
+                <div>
+                    <a href="#/by-image"><i class="fa fa-picture-o feature-icon  text-primary"></i></a>
+                </div>
+                <div>
+                    <h3 class="home-heading">By Photo</h3>
+                    report an incident using a photo
+                </div>
+            </div>
 
 
-      <div class="list-group-item list-group-item-home">
-        <div>
-          <a href="#/by-voice"><i class="fa fa-microphone feature-icon  text-primary"></i></a>
-        </div>
-        <div>
-          <h3 class="home-heading">By Voice</h3>
-          report an incident using a voice message
-        </div>
-      </div>
+            <div class="list-group-item list-group-item-home">
+                <div>
+                    <a href="#/by-voice"><i class="fa fa-microphone feature-icon  text-primary"></i></a>
+                </div>
+                <div>
+                    <h3 class="home-heading">By Voice</h3>
+                    report an incident using a voice message
+                </div>
+            </div>
 
-      <div class="list-group-item list-group-item-home">
-        <div>
-          <a href="#/by-text"><i class="fa fa-file-text-o feature-icon text-primary"></i></a>
-        </div>
-        <div>
-          <h3 class="home-heading">By Text</h3>
-          report an incident in details
-        </div>
-      </div>
+            <div class="list-group-item list-group-item-home">
+                <div>
+                    <a href="#/by-text"><i class="fa fa-file-text-o feature-icon text-primary"></i></a>
+                </div>
+                <div>
+                    <h3 class="home-heading">By Text</h3>
+                    report an incident in details
+                </div>
+            </div>
 
-      <div class="list-group-item list-group-item-home">
-        <div>
-          <a href="#/settings"><i class="fa fa-cogs feature-icon text-primary"></i></a>
+            <div class="list-group-item list-group-item-home">
+                <div>
+                    <a href="#/settings"><i class="fa fa-cogs feature-icon text-primary"></i></a>
+                </div>
+                <div>
+                    <h3 class="home-heading">Settings</h3>
+                    manage your account
+                </div>
+            </div>
+
         </div>
-        <div>
-          <h3 class="home-heading">Settings</h3>
-          manage your account
-        </div>
-      </div>
 
     </div>
-
-  </div>
 </div>
