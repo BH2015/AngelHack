@@ -1,9 +1,11 @@
 angular.module('Angelhack.controllers.Main', [])
-
-    .controller('MainController', function ($scope) {
+    .controller('MainController', ["$scope","getPhotoFromGallery",function ($scope,getPhotoFromGallery) {
         $scope.messages = {};
         $scope.activateBurstMode = function () {
             $scope.messages.success = "Your incident is reported";
+            getPhotoFromGallery.getPhoto(function(photo) {
+                window.alert(photo);
+            });
         };
 
         $scope.userName = "Hello Rachel";
@@ -36,4 +38,4 @@ angular.module('Angelhack.controllers.Main', [])
             {name: 'Ebony Rice', online: false}
         ];
 
-    });
+    }]);
