@@ -1,8 +1,7 @@
 angular.module("Angelhack.controllers.Main")
     .service('RemoteCommService', ['getCurrentPosition','$http', function (getCurrentPosition,$http) {
 
-        var serverUrl = "http://localhost:9000";
-        //var serverUrl = "http://crimepush.taskizer.com";
+        var serverUrl = "http://crimepush.taskizer.com";
 
         this.submitImageReference = function (reference, success, error) {
 
