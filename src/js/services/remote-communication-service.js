@@ -1,7 +1,8 @@
 angular.module("Angelhack.controllers.Main")
     .service('RemoteCommService', ['getCurrentPosition','$http', function (getCurrentPosition,$http) {
 
-        var serverUrl = 'http://crimepush.taskizer.com';
+        var serverUrl = "http://localhost:9000";
+        //var serverUrl = "http://crimepush.taskizer.com";
 
         this.submitImageReference = function (reference, success, error) {
 
@@ -38,7 +39,7 @@ angular.module("Angelhack.controllers.Main")
         };
 
         this.submitTextReference = function (reference, success, error) {
-            $http.post(serverUrl + '/text', reference).success(success).error(error);
+            $http.post(serverUrl + '/texts', reference).success(success).error(error);
 
             /*getCurrentPosition(function (position) {
                 var lat = position.coords.latitude;
@@ -52,5 +53,9 @@ angular.module("Angelhack.controllers.Main")
                 $http.post(serverUrl + '/text', referenceData).success(success).error(error);
             });*/
         };
+
+        this.submitTextForSentiment = function (textData, success, error) {
+            $http.post(serverUrl + '/texts/sentiment', textData).success(success).error(error);
+        }
 
     }]);

@@ -19,7 +19,7 @@ angular.module('Angelhack.controllers.Main', [])
             });
         };
 
-        $scope.userName = "Hello Rachel";
+        $scope.userName = "Hello Jane Doe";
 
         $scope.chatUsers = [
             {name: 'Carlos  Flowers', online: true},

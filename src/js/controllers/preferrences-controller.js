@@ -4,8 +4,8 @@ angular.module('Angelhack.controllers.Main')
         $scope.messages = {};
         $scope.isEditPersonal = false;
 
-        $scope.name = "Rachel Eriksen";
-        $scope.email = "rachel.eriksen@me.com";
+        $scope.name = "Jane Doe";
+        $scope.email = "john.doe@me.com";
         $scope.mobileNo = "+6590111222";
 
         $scope.enableEditPersonal = function () {
@@ -19,11 +19,11 @@ angular.module('Angelhack.controllers.Main')
 
         $scope.contacts = [];
 
-        $scope.contacts.push({icon: 'envelope', message: 'eric@yahoo.com', type: 'email'});
+        $scope.contacts.push({icon: 'envelope', message: 'emailforshekhar@gmail.com', type: 'email'});
         $scope.contacts.push({icon: 'phone', message: '+65 90112890', type: 'phone'});
         $scope.contacts.push({icon: 'phone', message: '+65 88005271', type: 'phone'});
-        $scope.contacts.push({icon: 'envelope', message: 'sam.86@live.com', type: 'email'});
-        $scope.contacts.push({icon: 'envelope', message: 'paul.gofman@gmail.com', type: 'email'});
+        $scope.contacts.push({icon: 'envelope', message: 'edison88tkp@gmail.com', type: 'email'});
+        $scope.contacts.push({icon: 'envelope', message: 'kelumkps@live.com', type: 'email'});
 
         $scope.contact = {};
         $scope.contact.type = 'email';
